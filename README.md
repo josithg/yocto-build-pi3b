@@ -120,6 +120,6 @@ bunzip2 -f core-image-minimal-raspberrypi3.rootfs-<timestamp>.wic.bz2
 
 - flash the image 
 ```
-sudo dd if=core-image-minimal-raspberrypi3.rootfs-20250703021413.wic of=/dev/sdX bs=4M status=progress conv=fsync
+sudo dd if=core-image-minimal-raspberrypi3.rootfs-<timestamp>.wic of=/dev/sdX bs=4M status=progress conv=fsync
 
 ```
