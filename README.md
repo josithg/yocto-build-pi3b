@@ -1,1 +1,0 @@
-# yocto-build-pi3b
