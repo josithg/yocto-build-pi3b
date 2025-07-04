@@ -112,14 +112,12 @@ bitbake core-image-minimal
 ```
 to find your image 
 
--  decompress the image 
-```
-bunzip2 -f core-image-minimal-raspberrypi3.rootfs-<timestamp>.wic.bz2
-
-```
+- insert the sd card and unmount partitions
 
 - flash the image 
 ```
-sudo dd if=core-image-minimal-raspberrypi3.rootfs-<timestamp>.wic of=/dev/sdX bs=4M status=progress conv=fsync
+sudo dd if=core-image-minimal-raspberrypi3.rootfs-<timestamp>.rootfs.rpi-sdimg of=/dev/sda bs=4M status=progress conv=fsync
 
 ```
+- use the sync command again for safety 
+- Flash the image 
