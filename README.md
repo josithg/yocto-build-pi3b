@@ -120,4 +120,4 @@ sudo dd if=core-image-minimal-raspberrypi3.rootfs-<timestamp>.rootfs.rpi-sdimg o
 
 ```
 - use the sync command again for safety 
-- Flash the image 
+- boot the image 
