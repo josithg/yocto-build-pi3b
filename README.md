@@ -29,7 +29,7 @@ sudo apt install gawk wget git-core diffstat unzip texinfo gcc \
 git clone https://git.yoctoproject.org/git/poky
 cd poky
 git checkout nanbield
-source oe-init-build-env build-rpi
+source oe-init-build-env build-rpi32
 ```
 - clone the other essential repo in home folder 
 
@@ -49,7 +49,7 @@ git checkout nanbield
 
 - navigate to build-rpi folder in poky 
 ```
-cd /home/<user>/poky/build-rpi
+cd /home/<user>/poky/build-rpi32
 ```
 
 - open the bblayers.conf and edit it accordingly
@@ -76,9 +76,9 @@ bitbake core-image-base
 
 - after the build i complete navigate to 
 ```
-/home/<user>/poky/build-rpi/tmp-glibc/deploy/images
+/home/<user>/poky/build-rpi32/tmp/deploy/images
 ```
-to find your image 
+- if there is no tmp folder check for tmp-glibc to find your image 
 
 - insert the sd card and unmount partitions
 
