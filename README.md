@@ -52,41 +52,9 @@ git checkout nanbield
 cd /home/<user>/poky/build-rpi
 ```
 
-- open the bblayers.conf
-```
-gedit bblayers.conf
-```
+- open the bblayers.conf and edit it accordingly
+- open the local.conf and edit it accordingly
 
--  add the following lines for including Wifi , Bluetooth , SSH in your build 
-```
-BBLAYERS ?= " \
-  /home/<user>/poky/meta \
-  /home/<user>/poky/meta-poky \
-  /home/<user>/poky/meta-yocto-bsp \
-  /home/<user>/meta-raspberrypi \
-  /home/<user>/meta-openembedded/meta-oe \
-  /home/<user>/meta-openembedded/meta-python \
-  /home/<user>/meta-openembedded/meta-networking \
-"
-```
-
-- save and close the bblayers.conf and open local.conf
-```
-
-MACHINE ??= "raspberrypi3"
-
-IMAGE_INSTALL:append = " \
-  linux-firmware-bcm43430 \
-  wpa-supplicant iw \
-  bluez5 pi-bluetooth \
-  dropbear \
-"
-
-IMAGE_FSTYPES += "rpi-sdimg"
-ENABLE_UART = "1"
-IMAGE_FSTYPES += "wic.bz2"
-
-```
 
 - save the file and exit and setup locale 
 ```
@@ -101,7 +69,7 @@ cd /home/<user>/poky
 
 - start building
 ```
-bitbake core-image-minimal
+bitbake core-image-base
 ```
 
 - make sure you have a stable power and internet connection the build duration depends upon your cpu 
@@ -116,7 +84,7 @@ to find your image
 
 - flash the image 
 ```
-sudo dd if=core-image-minimal-raspberrypi3.rootfs-<timestamp>.rootfs.rpi-sdimg of=/dev/sda bs=4M status=progress conv=fsync
+sudo dd if=core-image-base-raspberrypi3.rootfs-<timestamp>.rootfs.rpi-sdimg of=/dev/sda bs=4M status=progress conv=fsync
 
 ```
 - use the sync command again for safety 
